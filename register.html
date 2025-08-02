@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Thefusebase</title>
+    <!-- font awesome link -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+      integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <!-- Font family link -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
+      rel="stylesheet"
+    />
+    <link href="./output.css" rel="stylesheet" />
+    <script src="script.js" defer></script>
+  </head>
+  <body>
+    <div class="flex flex-col md:flex-row min-h-screen">
+      <!-- Left Side -->
+      <div class="w-full md:w-1/2 flex items-center justify-center p-8">
+        <div class="w-full max-w-md">
+          <h2 class="text-2xl font-bold mb-2 text-center">
+            Welcome to FuseBase
+          </h2>
+          <span class="text-sm text-greytext mb-6 block text-center"
+            >Protected by enterprise-grade security</span
+          >
+          <form class="space-y-4">
+            <div>
+              <label for="email" class="block text-sm font-medium text-gray-700"
+                >Business email</label
+              >
+              <input
+                id="email"
+                type="email"
+                autofocus
+                placeholder="Enter your  businesses email"
+                class="mt-1 w-full border border-gray-300 rounded px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500"
+                required
+              />
+            </div>
+
+            <div>
+              <label
+                for="password"
+                class="block text-sm font-medium text-gray-700"
+                >Password</label
+              >
+              <input
+                id="password"
+                type="password"
+                placeholder="Create a password"
+                class="mt-1 w-full border border-gray-300 rounded px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500"
+                required
+              />
+            </div>
+
+            <div>
+              <label
+                for="retype-email"
+                class="block text-sm font-medium text-gray-700"
+                >Retype Email</label
+              >
+              <input
+                id="retype-email"
+                type="email"
+                placeholder="Retype password"
+                class="mt-1 w-full border border-gray-300 rounded px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500"
+                required
+              />
+            </div>
+
+            <button
+              type="submit"
+              class="w-full bg-primary text-white py-2 rounded hover:opacity-90 duration-300 transition"
+            >
+              Sign up
+            </button>
+            <span class="text-center block">Or</span>
+            <!-- Social buttons -->
+            <div class="flex flex-col sm:flex-row items-center gap-5 mt-4">
+              <button
+                type="button"
+                class="flex items-center justify-center w-1/2 border border-gray-300 rounded py-2 hover:bg-gray-100"
+              >
+                <i class="fa-brands fa-google mr-2.5"></i>
+                Google
+              </button>
+              <button
+                type="button"
+                class="flex items-center justify-center w-1/2 border border-gray-300 rounded py-2 hover:bg-gray-100"
+              >
+                <i class="fa-brands fa-microsoft mr-2.5"></i>
+                Microsoft
+              </button>
+            </div>
+          </form>
+          <div class="mt-10 flex justify-center gap-8">
+            <img class="w-[100px]" src="Images/FuseBase-HIPAA.webp" alt="" />
+            <img
+              class="w-[100px]"
+              src="Images/FuseBase-soc2-type2-600x600.png"
+              alt=""
+            />
+          </div>
+        </div>
+      </div>
+      <!-- Right Side (hidden on mobile) -->
+      <div
+        class="max-sm:hidden md:flex md:w-1/2 bg-primary justify-center items-center"
+      >
+        <div class="bg-white rounded-2xl p-20 w-[80%] flex flex-col gap-4">
+          <div>
+            <i class="fa-solid fa-star text-yellow-500"></i>
+            <i class="fa-solid fa-star text-yellow-500"></i>
+            <i class="fa-solid fa-star text-yellow-500"></i>
+            <i class="fa-solid fa-star text-yellow-500"></i>
+            <i class="fa-solid fa-star text-yellow-500"></i>
+          </div>
+          <div>
+            <div class="mb-2.5 font-semibold">Why change?</div>
+            <p>
+              Admin work piled up, and we couldn't focus on high-value tasks
+              that drive impact
+            </p>
+          </div>
+          <div>
+            <div class="mb-2.5 font-semibold">Why now?</div>
+            <p>
+              AI is advancing fast, and competitors were pullung ahead. We
+              needed a solution that keeps up without extensive training.
+            </p>
+          </div>
+          <div>
+            <div class="mb-2.5 font-semibold">Why Fusebase?</div>
+            <p>
+              AI agents save time, the expensive feels polished, and it replaced
+              five tools with one _ doing more for less
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

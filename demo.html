@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Thefusebase</title>
+    <!-- font awesome link -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+      integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <!-- Font family link -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
+      rel="stylesheet"
+    />
+    <link href="./output.css" rel="stylesheet" />
+    <script src="script.js" defer></script>
+  </head>
+  <body>
+    <section>
+      <div class="container mt-10 mb-20">
+        <div class="text-center">
+          <img class="m-auto" src="Images/logo.svg" alt="" />
+          <span
+            class="text-[14px] font-semibold block mt-[40px] text-[#047A47] rounded-2xl px-2 py-1 bg-gray-100 w-fit m-auto"
+            >Free consultation</span
+          >
+          <span class="text-[35px] font-bold mt-3 block"
+            >See FuseBase in Action
+          </span>
+          <p class="text-[15px] text-greytext font-semibold">
+            Every business is unique. Our experts can help to customize based on
+            your requirements.
+          </p>
+        </div>
+        <form class="space-y-6 mt-20 sm:mx-[100px]">
+          <!-- First row - First Name and Last Name -->
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <div>
+              <label
+                for="firstName"
+                class="block text-sm font-medium text-gray-700 mb-1"
+                >First Name</label
+              >
+              <input
+                type="text"
+                autofocus
+                id="firstName"
+                name="firstName"
+                class="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
+              />
+            </div>
+            <div>
+              <label
+                for="lastName"
+                class="block text-sm font-medium text-gray-700 mb-1"
+                >Last Name</label
+              >
+              <input
+                type="text"
+                id="lastName"
+                name="lastName"
+                class="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
+              />
+            </div>
+          </div>
+
+          <!-- Second row - Work Address Mail and Phone -->
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <div>
+              <label
+                for="workAddressMail"
+                class="block text-sm font-medium text-gray-700 mb-1"
+                >Work address email</label
+              >
+              <input
+                type="email"
+                id="workAddressMail"
+                name="workAddressMail"
+                class="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
+              />
+            </div>
+            <div>
+              <label
+                for="phone"
+                class="block text-sm font-medium text-gray-700 mb-1"
+                >Phone</label
+              >
+              <input
+                type="tel"
+                id="phone"
+                name="phone"
+                class="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
+              />
+            </div>
+          </div>
+
+          <!-- Third row - Company Name and Request Type -->
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <div>
+              <label
+                for="companyName"
+                class="block text-sm font-medium text-gray-700 mb-1"
+                >Company Name</label
+              >
+              <input
+                type="text"
+                id="companyName"
+                name="companyName"
+                class="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
+              />
+            </div>
+            <div>
+              <label
+                for="requestType"
+                class="block text-sm font-medium text-gray-700 mb-1"
+                >Request Type</label
+              >
+              <select
+                id="requestType"
+                name="requestType"
+                class="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
+              >
+                <option value="" selected disabled>Select request type</option>
+                <option value="support">Support</option>
+                <option value="sales">Sales Inquiry</option>
+                <option value="partnership">Partnership</option>
+                <option value="other">Other</option>
+              </select>
+            </div>
+          </div>
+
+          <!-- Textarea for questions/expectations -->
+          <div>
+            <label
+              for="questions"
+              class="block text-sm font-medium text-gray-700 mb-1"
+              >Please, share your questions or expectations to prepare for the
+              call</label
+            >
+            <textarea
+              id="questions"
+              name="questions"
+              rows="4"
+              class="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
+            ></textarea>
+          </div>
+
+          <!-- Terms and conditions -->
+          <div class="flex items-start">
+            <div class="flex items-center h-5">
+              <input
+                id="terms"
+                name="terms"
+                type="checkbox"
+                class="focus:ring-blue-500 h-4 w-4 text-blue-600 border-gray-300 rounded"
+              />
+            </div>
+            <div class="ml-3 text-sm">
+              <label for="terms" class="font-medium text-gray-700">
+                I agree to terms & conditions provided by the company. By
+                providing my phone number, I agree to receive text messages from
+                the business.
+              </label>
+            </div>
+          </div>
+
+          <!-- Buttons -->
+          <div class="flex flex-col sm:flex-row gap-4 pt-4">
+            <button
+              type="button"
+              class="flex-1 px-6 py-3 bg-gray-200 text-gray-800 font-medium rounded-md hover:bg-gray-300 focus:outline-none focus:ring-2 focus:ring-gray-500"
+            >
+              Add Guest
+            </button>
+            <button
+              type="submit"
+              class="flex-1 px-6 py-3 bg-primary text-white font-medium rounded-md hover:opacity-90 duration-300 focus:outline-none focus:ring-2 focus:ring-blue-500"
+            >
+              Continue
+            </button>
+          </div>
+        </form>
+      </div>
+    </section>
+  </body>
+</html>
