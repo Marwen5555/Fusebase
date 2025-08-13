@@ -1,0 +1,663 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Thefusebase</title>
+    <!-- font awesome link -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+      integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <!-- Font family link -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
+      rel="stylesheet"
+    />
+    <link href="./output.css" rel="stylesheet" />
+    <script src="script.js" defer></script>
+  </head>
+  <body>
+    <header class="fixed top-0 left-0 w-full bg-white z-50">
+      <div class="container py-6 flex justify-between items-center">
+        <a href="index.html">
+          <img class="max-sm:w-[190px]" src="Images/logo.svg" alt="" />
+        </a>
+        <nav class="flex items-center justify-between gap-10">
+          <!-- Navigation menu, visible only on extra large screens -->
+          <ul class="hidden xl:flex gap-5 font-[600]">
+            <li
+              id="solutions-menu"
+              class="group flex items-center gap-1 cursor-pointer"
+            >
+              <a href="">Solutions</a>
+              <i
+                class="fa-solid fa-chevron-down text-[12px] transition duration-400 group-hover:rotate-180"
+              ></i>
+            </li>
+            <li
+              id="industries-menu"
+              class="group flex items-center gap-1 cursor-pointer"
+            >
+              <a href="">Industries</a>
+              <i
+                class="fa-solid fa-chevron-down text-[12px] transition duration-400 group-hover:rotate-180"
+              ></i>
+            </li>
+            <li><a href="pricing.html">Pricing</a></li>
+            <li
+              id="resources-menu"
+              class="group flex items-center gap-1 cursor-pointer"
+            >
+              <a href="">Ressources</a>
+              <i
+                class="fa-solid fa-chevron-down text-[12px] transition duration-400 group-hover:rotate-180"
+              ></i>
+            </li>
+          </ul>
+          <!-- Buttons (Sign in, Book a demo, etc), only on extra large screens -->
+          <div class="hidden xl:flex items-center gap-4 font-bold text-sm">
+            <a href="">Sign in</a>
+            <a
+              class="border border-black rounded px-3 py-1.5 hover:bg-primary hover:text-white transition"
+              href="demo.html"
+              >Book a demo</a
+            >
+            <a
+              class="bg-primary text-white rounded px-3 py-1.5 hover:opacity-90 duration-300"
+              href="register.html"
+              >Get started for free</a
+            >
+          </div>
+          <!-- Burger icon, only on small/medium/large screens -->
+          <div class="xl:hidden text-2xl cursor-pointer">
+            <i id="Burger" class="fa-solid fa-bars-staggered"></i>
+          </div>
+        </nav>
+        <nav
+          class="nav_Mobile xl:hidden fixed top-20 left-0 w-full h-[calc(100vh-80px)] bg-white z-50 overflow-hidden -translate-x-full duration-300"
+        >
+          <div class="relative w-full h-full">
+            <!-- Panel: Main Menu -->
+            <div
+              id="mainPanel"
+              class="absolute w-full h-full transition-transform duration-300 transform translate-x-0"
+            >
+              <div class="container flex flex-col justify-between h-full py-5">
+                <ul
+                  class="[&>*]:text-[15px] [&>*]:py-[15px] [&>*]:font-semibold space-y-2"
+                >
+                  <li>
+                    <button
+                      class="menu-link w-full text-left"
+                      data-target="solutions"
+                    >
+                      Solutions <i class="fa-solid fa-angle-right ml-3"></i>
+                    </button>
+                  </li>
+                  <li>
+                    <button
+                      class="menu-link w-full text-left"
+                      data-target="industries"
+                    >
+                      Industries <i class="fa-solid fa-angle-right ml-3"></i>
+                    </button>
+                  </li>
+                  <li><a href="pricing.html">Pricing</a></li>
+                  <li>
+                    <button
+                      class="menu-link w-full text-left"
+                      data-target="resources"
+                    >
+                      Ressources <i class="fa-solid fa-angle-right ml-3"></i>
+                    </button>
+                  </li>
+                </ul>
+                <div
+                  class="[&>*]:p-3 [&>*]:font-semibold [&>*]:rounded-[4px] [&>*]:text-center mt-10"
+                >
+                  <a
+                    class="text-primary block border-[1px] border-primary mb-4"
+                    href="demo.html"
+                    >Book a demo</a
+                  >
+                  <a class="bg-primary text-white block" href="register.html"
+                    >Get started free</a
+                  >
+                </div>
+              </div>
+            </div>
+            <!-- Panel: SubMenu -->
+            <div
+              id="subPanel"
+              class="absolute w-full h-full bg-white transition-transform duration-300 transform translate-x-full"
+            >
+              <div class="container flex flex-col h-full py-5 font-semibold">
+                <!-- Back Button -->
+                <button id="backButton" class="text-left text-sm mb-4">
+                  <-- &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Back
+                </button>
+
+                <!-- Dynamic Title -->
+                <h2 id="subPanelTitle" class="text-lg font-semibold mb-4">
+                  Title
+                </h2>
+
+                <!-- Submenu Content -->
+                <ul id="subPanelContent" class="[&>*]:py-2 text-[15px]">
+                  <!-- Filled dynamically -->
+                </ul>
+              </div>
+            </div>
+          </div>
+        </nav>
+      </div>
+      <div
+        class="sltMenu fixed left-0 top-20 w-full h-fit p-10 bg-white z-50 hidden transition duration-700"
+      >
+        <div
+          class="w-[80%] flex flex-wrap justify-center gap-10 [&>*]:w-[230px] [&>*]:p-4 m-auto [&>*]:hover:bg-[#f3eeee] [&>*]:rounded-[6px] transition [&>*]:duration-400"
+        >
+          <div>
+            <div class="flex items-center gap-2 text-[15px] font-[500]">
+              <i class="fa-solid fa-wand-magic-sparkles"></i>
+              <a href="agent.html">Ai Agents (apps)</a>
+            </div>
+            <p class="text-[14px] text-[#001216]">
+              User friendly Ai agents in minutes for every team
+            </p>
+          </div>
+          <div>
+            <div class="flex items-center gap-2 text-[15px] font-[500]">
+              <i class="fa-solid fa-address-book"></i>
+              <a href="portal.html">Client Portal</a>
+            </div>
+            <p class="text-[14px] text-[#001216]">
+              Level up your colloboration with unified digital hubs
+            </p>
+          </div>
+          <div>
+            <div class="flex items-center gap-2 text-[15px] font-[500]">
+              <i class="fa-regular fa-square-plus"></i>
+              <a href="deal.html">Deal Rooms</a>
+            </div>
+            <p class="text-[14px] text-[#001216]">
+              Close faster with smart, sleel spaces for evert deal
+            </p>
+          </div>
+          <div>
+            <div class="flex items-center gap-2 text-[15px] font-[500]">
+              <i class="fa-solid fa-book-atlas"></i>
+              <a href="knowledge.html">Knowledge Base </a>
+            </div>
+            <p class="text-[14px] text-[#001216]">
+              Create one source of truth for clients and teams
+            </p>
+          </div>
+          <div>
+            <div class="flex items-center gap-2 text-[15px] font-[500]">
+              <i class="fa-solid fa-list-check"></i>
+              <a href="management.html">Project Management</a>
+            </div>
+            <p class="text-[14px] text-[#001216]">
+              Work on clients projects without extra hurdles
+            </p>
+          </div>
+        </div>
+        <div
+          class="absolute left-0 w-full text-center bg-primary py-3.5 flex justify-center items-center gap-2.5 mt-5"
+        >
+          <a class="bg-[#93d7d0] rounded-[5px] p-1" href="demo.html"
+            >Book a demo</a
+          >
+          <p class="text-white">
+            with our experts to build your custom workflow
+          </p>
+        </div>
+      </div>
+      <div
+        class="indusMenu fixed left-0 top-20 w-full h-fit p-10 bg-white z-50 transition duration-700 hidden"
+      >
+        <div
+          class="w-[80%] flex flex-wrap justify-center gap-10 [&>*]:w-[230px] [&>*]:p-4 m-auto [&>*]:hover:bg-[#f3eeee] [&>*]:rounded-[6px] transition [&>*]:duration-400"
+        >
+          <div>
+            <div class="flex items-center gap-2 text-[15px] font-[500]">
+              <i class="fa-solid fa-square-poll-vertical"></i>
+              <a href="agencies.html">Aggencies</a>
+            </div>
+            <p class="text-[14px] text-[#001216]">
+              Align teams and clients in one branded space
+            </p>
+          </div>
+          <div>
+            <div class="flex items-center gap-2 text-[15px] font-[500]">
+              <i class="fa-solid fa-user-tie"></i>
+              <a href="consultants.html">Consultants and Coachs</a>
+            </div>
+            <p class="text-[14px] text-[#001216]">
+              Deliver exceptional client service
+            </p>
+          </div>
+          <div>
+            <div class="flex items-center gap-2 text-[15px] font-[500]">
+              <i class="fa-solid fa-palette"></i>
+              <a href="design.html">Design Agencies</a>
+            </div>
+            <p class="text-[14px] text-[#001216]">
+              Crafted designs deserve crafted delivery tools
+            </p>
+          </div>
+          <div>
+            <div class="flex items-center gap-2 text-[15px] font-[500]">
+              <i class="fa-solid fa-chalkboard-user"></i>
+              <a href="services.html">Proffessional Services</a>
+            </div>
+            <p class="text-[14px] text-[#001216]">
+              Get a one stop shop for collaboration
+            </p>
+          </div>
+        </div>
+        <div
+          class="absolute left-0 w-full text-center bg-primary py-3.5 flex justify-center items-center gap-2.5 mt-5"
+        >
+          <a class="bg-[#93d7d0] rounded-[5px] p-1" href="demo.html"
+            >Book a demo</a
+          >
+          <p class="text-white">
+            with our experts to build your custom workflow
+          </p>
+        </div>
+      </div>
+      <div
+        class="rscMenu fixed left-0 top-20 w-full h-fit p-10 bg-white z-50 transition duration-700 hidden"
+      >
+        <div
+          class="w-[80%] flex flex-wrap justify-center gap-10 [&>*]:w-[230px] [&>*]:p-4 m-auto [&>*]:hover:bg-[#f3eeee] [&>*]:rounded-[6px] transition [&>*]:duration-400"
+        >
+          <div>
+            <div class="flex items-center gap-2 text-[15px] font-[500]">
+              <i class="fa-solid fa-pen"></i>
+              <a href="blog.html">Blog</a>
+            </div>
+            <p class="text-[14px] text-[#001216]">
+              Read the latest collaboration tips
+            </p>
+          </div>
+          <div>
+            <div class="flex items-center gap-2 text-[15px] font-[500]">
+              <i class="fa-solid fa-envelope"></i>
+              <a href="contact.html">Contact Us</a>
+            </div>
+            <p class="text-[14px] text-[#001216]">
+              Get growth advice from our experts
+            </p>
+          </div>
+          <div>
+            <div class="flex items-center gap-2 text-[15px] font-[500]">
+              <i class="fa-brands fa-glide"></i>
+              <a href="guides.html">Guides</a>
+            </div>
+            <p class="text-[14px] text-[#001216]">
+              Answer your FuseBase questions
+            </p>
+          </div>
+          <div>
+            <div class="flex items-center gap-2 text-[15px] font-[500]">
+              <i class="fa-solid fa-map-location"></i>
+              <a href="roadmap.html">Roadmap </a>
+            </div>
+            <p class="text-[14px] text-[#001216]">
+              See what waits for you in the future
+            </p>
+          </div>
+        </div>
+        <div
+          class="absolute left-0 w-full text-center bg-primary py-3.5 flex justify-center items-center gap-2.5 mt-5"
+        >
+          <a class="bg-[#93d7d0] rounded-[5px] p-1" href="demo.html"
+            >Book a demo</a
+          >
+          <p class="text-white">
+            with our experts to build your custom workflow
+          </p>
+        </div>
+      </div>
+    </header>
+    <section class="landing mt-[80px]">
+      <div class="container pt-16">
+        <div class="heading mb-12">
+          <span
+            class="py-2 px-1.5 sm:px-6 font-semibold border-[1px] border-[#DEDEDE] rounded-3xl block w-fit m-auto"
+            ><i
+              class="fa-solid fa-star mr-2.5 bg-primary p-1.5 sm:p-2 rounded-full text-[14px] text-white"
+            ></i
+            >Join 3000+ businesses scaling with us
+          </span>
+          <h2
+            class="font-bold text-3xl sm:text-[44px] sm:w-[60%] text-center m-auto my-6"
+          >
+            Choose your plan
+          </h2>
+          <p class="text-greytext text-center sm:w-[60%] m-auto">
+            Free to try. One tool for best internal and external collaboration
+          </p>
+        </div>
+        <div class="flex flex-col sm:flex-row justify-between flex-wrap gap-5">
+          <div
+            class="flex flex-col gap-5 border-[1px] border-[#eaecf5] p-5 rounded-2xl"
+          >
+            <h5 class="font-bold text-[20px]">Solo</h5>
+            <span class="text-[14px]">Best for personal use </span>
+            <span class="font-bold text-3xl"
+              >$32 <span class="text-[14px]">/month</span></span
+            >
+            <a
+              class="px-10 py-2 rounded-[6px] bg-primary text-white text-center font-semibold"
+              href=""
+              >Start free trial</a
+            >
+            <span class="font-semibold">What you get:</span>
+            <ul class="flex flex-col gap-2">
+              <li><i class="fas fa-check mr-2"></i>AI Agents</li>
+              <li><i class="fas fa-check mr-2"></i>AI requests: 1000</li>
+              <li><i class="fas fa-check mr-2"></i>Members: 1</li>
+              <li><i class="fas fa-check mr-2"></i>Portals: 1 (optional)</li>
+              <li><i class="fas fa-check mr-2"></i>Clients: 1 (optional)</li>
+              <li><i class="fas fa-check mr-2"></i>Automation runs: 1000</li>
+              <li><i class="fas fa-check mr-2"></i>Transcriptions: 5h</li>
+              <li><i class="fas fa-check mr-2"></i>Trial period: 14 days</li>
+            </ul>
+          </div>
+          <div
+            class="flex flex-col gap-5 border-[1px] border-[#eaecf5] p-5 rounded-2xl"
+          >
+            <h5 class="font-bold text-[20px]">Essentials</h5>
+            <span class="text-[14px]">Best for small teams </span>
+            <span class="font-bold text-3xl"
+              >$82 <span class="text-[14px]">/month</span></span
+            >
+            <a
+              class="px-10 py-2 rounded-[6px] bg-primary text-white text-center font-semibold"
+              href=""
+              >Start free trial</a
+            >
+            <span class="font-semibold">What you get:</span>
+            <ul class="flex flex-col gap-2">
+              <li><i class="fas fa-check mr-2"></i>AI Agents</li>
+              <li><i class="fas fa-check mr-2"></i>AI requests: 1000</li>
+              <li><i class="fas fa-check mr-2"></i>Members: 5</li>
+              <li><i class="fas fa-check mr-2"></i>Portals: 10 (optional)</li>
+              <li><i class="fas fa-check mr-2"></i>Clients: 100 (optional)</li>
+              <li><i class="fas fa-check mr-2"></i>Automation runs: 10000</li>
+              <li><i class="fas fa-check mr-2"></i>Transcriptions: 10h</li>
+              <li><i class="fas fa-check mr-2"></i>Trial period: 14 days</li>
+            </ul>
+          </div>
+          <div
+            class="flex flex-col gap-5 border-[1px] border-[#eaecf5] p-5 rounded-2xl"
+          >
+            <h5 class="font-bold text-[20px]">Advanced</h5>
+            <span class="text-[14px]">Best for scale</span>
+            <span class="font-bold text-3xl"
+              >$332 <span class="text-[14px]">/month</span></span
+            >
+            <a
+              class="px-10 py-2 rounded-[6px] bg-primary text-white text-center font-semibold"
+              href=""
+              >Start free trial</a
+            >
+            <span class="font-semibold">What you get:</span>
+            <ul class="flex flex-col gap-2">
+              <li><i class="fas fa-check mr-2"></i>AI Agents</li>
+              <li><i class="fas fa-check mr-2"></i>AI requests: 50000</li>
+              <li><i class="fas fa-check mr-2"></i>Members: 50</li>
+              <li><i class="fas fa-check mr-2"></i>Portal:50/unlimited</li>
+              <li><i class="fas fa-check mr-2"></i>Clients: 1000/unlimited</li>
+              <li><i class="fas fa-check mr-2"></i>Automation runs: 50000</li>
+              <li><i class="fas fa-check mr-2"></i>Transcriptions: 1000h</li>
+              <li><i class="fas fa-check mr-2"></i>Trial period: 14 days</li>
+            </ul>
+          </div>
+          <div
+            class="flex flex-col gap-5 border-[1px] border-[#eaecf5] p-5 rounded-2xl"
+          >
+            <h5 class="font-bold text-[20px]">Unlimited</h5>
+            <span class="text-[14px]">Best for organizations </span>
+            <span class="font-bold text-3xl">Custom</span>
+            <a
+              class="px-10 py-2 rounded-[6px] bg-primary text-white text-center font-semibold"
+              href=""
+              >Start free trial</a
+            >
+            <span class="font-semibold">What you get:</span>
+            <ul class="flex flex-col gap-2">
+              <li><i class="fas fa-check mr-2"></i>AI Agents</li>
+              <li><i class="fas fa-check mr-2"></i>AI requests: Unlimited></li>
+              <li><i class="fas fa-check mr-2"></i>Members: Unlimited</li>
+              <li><i class="fas fa-check mr-2"></i>Portal:50/unlimited</li>
+              <li><i class="fas fa-check mr-2"></i>Clients: 1000/unlimited</li>
+              <li>
+                <i class="fas fa-check mr-2"></i>Automation runs: Unlimited
+              </li>
+              <li>
+                <i class="fas fa-check mr-2"></i>Transcriptions: Unlimited
+              </li>
+              <li><i class="fas fa-check mr-2"></i>Trial period: contact us</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="py-10 sm:py-20">
+      <div class="container">
+        <div class="heading mb-12">
+          <span
+            class="py-2 px-6 font-semibold border-[1px] border-[#DEDEDE] rounded-3xl block w-fit m-auto text-[#EA580C]"
+            ><i class="fa-solid fa-star mr-2.5 p-2 rounded-full text-[14px]"></i
+            >Add-ons
+          </span>
+          <h2
+            class="font-bold text-3xl sm:text-[44px] sm:w-[40%] text-center m-auto my-6"
+          >
+            Customize your plan with add-ons
+          </h2>
+          <p class="text-greytext text-center sm:w-[60%] m-auto">
+            FuseBase is flexible and scales as your business grows. Personalize
+            client experiences and workflows with special add-ons
+          </p>
+        </div>
+        <div
+          class="flex flex-col sm:flex-row justify-between gap-5 sm:[&>*]:w-[45%] flex-wrap sm:[&>*]:border-[1px] sm:[&>*]:border-[#DEDEDE] sm:[&>*]:rounded-2xl"
+        >
+          <div class="p-5">
+            <div class="flex justify-between items-center">
+              <div>
+                <h6 class="font-semibold">Automation</h6>
+                <span class="text-greytext text-[14px]">+1000 runs </span>
+              </div>
+              <div>
+                <span class="font-semibold block">$7</span>
+                <span class="text-greytext">/month per add-on </span>
+              </div>
+            </div>
+            <p class="mt-5">
+              Boost efficiency with our customizable workflow automation tool.
+              Work smarter, not harder.
+            </p>
+          </div>
+          <div class="p-5">
+            <div class="flex justify-between items-center">
+              <div>
+                <h6 class="font-semibold">Client Portal</h6>
+                <span class="text-greytext text-[14px]">+1000 runs </span>
+              </div>
+              <div>
+                <span class="font-semibold block">$20</span>
+                <span class="text-greytext">/month per add-on </span>
+              </div>
+            </div>
+            <p class="mt-5">
+              Set up individual client portals for engagement boost or turn them
+              into interactive knowledge bases.
+            </p>
+          </div>
+          <div class="p-5">
+            <div class="flex justify-between items-center">
+              <div>
+                <h6 class="font-semibold">Transcribing</h6>
+                <span class="text-greytext text-[14px]">+20 hours</span>
+              </div>
+              <div>
+                <span class="font-semibold block">$7</span>
+                <span class="text-greytext">/month per add-on </span>
+              </div>
+            </div>
+            <p class="mt-5">
+              Avoid the headaches of manual transcription. Perfect for
+              documenting team discussions and client calls.
+            </p>
+          </div>
+          <div class="p-5">
+            <div class="flex justify-between items-center">
+              <div>
+                <h6 class="font-semibold">Fusebase AI</h6>
+                <span class="text-greytext text-[14px]">+1000 runs </span>
+              </div>
+              <div>
+                <span class="font-semibold block">$7</span>
+                <span class="text-greytext">+ one portal</span>
+              </div>
+            </div>
+            <p class="mt-5">
+              Set up individual client portals for engagement boost or turn them
+              into interactive knowledge bases.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="py-10 sm:py-20">
+      <div
+        class="container bg-primary p-20 text-white sm:rounded-2xl text-center"
+      >
+        <h3 class="text-3xl sm:text-5xl font-semibold sm:w-[60%] m-auto">
+          Start streamlining your projects for free today
+        </h3>
+        <p class="my-5 sm:w-[60%] m-auto">
+          Try FuseBase free with up to 5 client projects and see how you can
+          reclaim billable hours and reduce operational chaos
+        </p>
+        <div
+          class="flex flex-col sm:flex-row gap-2.5 justify-center font-semibold"
+        >
+          <a class="rounded-[6px] px-5 py-2 bg-[#96E1DC] text-primary" href=""
+            >Start a free trial</a
+          >
+          <a class="rounded-[6px] px-5 py-2 border-[1px] text-[#96E1DC]" href=""
+            >Get a custom portal</a
+          >
+        </div>
+      </div>
+    </section>
+    <footer class="py-10 sm:py-20 bg-primary text-white">
+      <div class="container">
+        <div class="flex flex-col sm:flex-row justify-between sm:gap-10">
+          <div class="footer-section">
+            <div
+              class="footer-toggle flex items-center justify-between py-3 sm:py-6 text-[#ffffff99] max-sm:border-b border-[#ffffff99] cursor-pointer"
+            >
+              <span class="sm:p-0">Our Solutions</span>
+              <i class="fa-solid fa-angle-down sm:hidden!"></i>
+            </div>
+            <ul
+              class="footer-content transition-all duration-300 max-sm:max-h-0 max-sm:overflow-hidden max-sm:opacity-0 max-sm:mt-6 [&>*]:mb-4"
+            >
+              <li><a href="">Mid-size companies</a></li>
+              <li><a href="agent.html">AI Agents (apps)</a></li>
+              <li><a href="portal.html">Client portal</a></li>
+              <li><a href="deal.html">Deal rooms</a></li>
+              <li><a href="">White label</a></li>
+              <li><a href="knowledge.html">Knowledge base</a></li>
+            </ul>
+          </div>
+          <div class="footer-section">
+            <div
+              class="footer-toggle flex items-center justify-between py-3 sm:py-6 text-[#ffffff99] max-sm:border-b border-[#ffffff99] cursor-pointer"
+            >
+              <span class="sm:p-0">Resources</span>
+              <i class="fa-solid fa-angle-down sm:hidden!"></i>
+            </div>
+            <ul
+              class="footer-content transition-all duration-300 max-sm:max-h-0 max-sm:overflow-hidden max-sm:opacity-0 max-sm:mt-6 [&>*]:mb-4"
+            >
+              <li><a href="">Templates</a></li>
+              <li><a href="guides.html">Guide</a></li>
+              <li><a href="roadmap.html">Roadmap</a></li>
+              <li><a href="">Privacy</a></li>
+              <li><a href="contact.html">Contact us</a></li>
+            </ul>
+          </div>
+          <div class="footer-section">
+            <div
+              class="footer-toggle flex items-center justify-between py-3 sm:py-6 text-[#ffffff99] max-sm:border-b border-[#ffffff99] cursor-pointer"
+            >
+              <span class="sm:p-0">Integrations</span>
+              <i class="fa-solid fa-angle-down sm:hidden!"></i>
+            </div>
+            <ul
+              class="footer-content transition-all duration-300 max-sm:max-h-0 max-sm:overflow-hidden max-sm:opacity-0 mt-6 [&>*]:mb-4"
+            >
+              <li><a href="">SharePoint</a></li>
+              <li><a href="">Moxo</a></li>
+              <li><a href="">Notion</a></li>
+              <li><a href="">Confluence</a></li>
+              <li><a href="">Asana</a></li>
+              <li><a href="">Airtable</a></li>
+              <li><a href="">Monday</a></li>
+            </ul>
+          </div>
+          <div class="footer-section">
+            <div
+              class="footer-toggle flex items-center justify-between py-3 sm:py-6 text-[#ffffff99] max-sm:border-b border-[#ffffff99] cursor-pointer"
+            >
+              <span class="sm:p-0">Learn</span>
+              <i class="fa-solid fa-angle-down sm:hidden!"></i>
+            </div>
+            <ul
+              class="footer-content transition-all duration-300 max-sm:max-h-0 max-sm:overflow-hidden max-sm:opacity-0 max-sm:mt-6 [&>*]:mb-4"
+            >
+              <li><a href="">Top client portal software</a></li>
+              <li><a href="">Client database solutions</a></li>
+              <li><a href="portal.html">How to build a client portal</a></li>
+              <li><a href="">Power of client dashboard</a></li>
+              <li><a href="">Virtual Data Room Softwares</a></li>
+              <li><a href="">See all</a></li>
+            </ul>
+          </div>
+        </div>
+        <div
+          class="mt-12 flex flex-col sm:flex-row justify-between gap-8 items-center"
+        >
+          <img src="Images/fusebase-logo.svg" alt="" />
+          <div class="flex gap-4 text-[20px]">
+            <i class="fa-brands fa-facebook-f"></i>
+            <i class="fa-brands fa-twitter"></i>
+            <i class="fa-brands fa-linkedin"></i>
+            <i class="fa-brands fa-youtube"></i>
+            <i class="fa-brands fa-instagram"></i>
+          </div>
+        </div>
+        <p class="text-[#ffffff99] text-center mt-12">
+          Copyright © 2025 FuseBase is a product of Nimbus Web Inc., a Delaware
+          company
+        </p>
+      </div>
+    </footer>
+  </body>
+</html>
